@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contractor Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Contractor Services</h1>
+    <input type="text" id="searchInput" placeholder="Search crop type or quantity">
+    <button id="searchBtn">Search</button>
+    <div id="searchResults"></div>
+  </div>
+
+  <script>
+    document.getElementById('searchBtn').addEventListener('click', function () {
+      const searchValue = document.getElementById('searchInput').value;
+      if (searchValue) {
+        document.getElementById('searchResults').innerHTML = `<p>Search results for: ${searchValue}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
