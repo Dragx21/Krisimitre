@@ -494,26 +494,63 @@ img {
     height: auto;
     border-radius: 5px;
 }
-.service-options {
+#services {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+#services h2 {
     text-align: center;
+    color: #333;
     margin-bottom: 30px;
 }
 
-.service-options button {
-    background-color: #387F39; /* Dark green */
-    color: white;
+.service-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px;
+    width: calc(50% - 30px);
+    text-align: center;
+}
+
+.service-item h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.service-item button {
+    background-color: #3498db;
+    color: #fff;
     border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    margin: 10px;
-    cursor: pointer;
+    padding: 10px 20px;
     border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.service-options button:hover {
-    background-color: #A2CA71; /* Light green on hover */
+.service-item button:hover {
+    background-color: #2980b9;
 }
+
+@media (max-width: 768px) {
+    .service-item {
+        width: 100%;
+    }
+}
+
 
 .form-container, .search-container {
     margin: auto;
@@ -658,3 +695,123 @@ img {
   #searchBtn:hover, #addCropBtn:hover {
     background-color: #1A5319;
   }
+  .modal {
+    display: none; /* Hidden by default */
+    /* ... other existing styles ... */
+}
+/* ... (keep your existing CSS) ... */
+
+.contractor-page {
+    background-color: #F6E96B;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header {
+    background-color: #387F39;
+    padding: 15px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+h1 {
+    color: #387F39;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #387F39;
+    font-weight: bold;
+}
+
+select,
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #A2CA71;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[readonly] {
+    background-color: #f0f0f0;
+}
+
+button {
+    background-color: #F6E96B;
+    color: #387F39;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #BEDC74;
+}
+
+#contractDetails {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f8ea;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.payment-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.payment-btn {
+    flex: 1;
+    margin: 0 10px;
+}
+
+#cropImage {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    .page-container {
+        padding: 10px;
+    }
+
+    .payment-buttons {
+        flex-direction: column;
+    }
+
+    .payment-btn {
+        margin: 10px 0;
+    }
+}
