@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
 
             if (cropType === 'rice') {
-                cropImage.src = 'rice.jpg';
+                cropImage.src = 'rice.png';
                 cropImage.style.display = 'block';
             } else {
                 cropImage.style.display = 'none';
