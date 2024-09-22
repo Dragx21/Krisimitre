@@ -51,3 +51,65 @@ document.getElementById('feedbackForm')?.addEventListener('submit', function(eve
 });
 
 // ... any other main page specific code ...
+document.addEventListener('DOMContentLoaded', function() {
+    const openChatBtn = document.getElementById('open-chat');
+    const closeChatBtn = document.getElementById('close-chat');
+    const chatContainer = document.querySelector('.chat-container');
+    const sendMessageBtn = document.getElementById('send-message');
+    const userInput = document.getElementById('user-input');
+    const chatMessages = document.querySelector('.chat-messages');
+
+    openChatBtn.addEventListener('click', function() {
+        chatContainer.style.display = 'block';
+        openChatBtn.style.display = 'none';
+    });
+
+    closeChatBtn.addEventListener('click', function() {
+        chatContainer.style.display = 'none';
+        openChatBtn.style.display = 'block';
+    });
+
+    sendMessageBtn.addEventListener('click', sendMessage);
+    userInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    function sendMessage() {
+        const message = userInput.value.trim();
+        if (message) {
+            addMessage('user', message);
+            userInput.value = '';
+            // Simulate AI response (replace with actual AI integration later)
+            setTimeout(() => {
+                addMessage('ai', "I'm Sahayak, your AI assistant. How can I help you today?");
+            }, 1000);
+        }
+    }
+
+    function addMessage(sender, message) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message', sender);
+        messageElement.textContent = message;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Initial greeting
+    addMessage('ai', "Hello! I'm Sahayak, your AI chatbot. How can I assist you today?");
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // ... (existing code) ...
+
+    // Add event listeners for mic icons
+    const micIcons = document.querySelectorAll('.mic-icon');
+    micIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            const inputField = this.previousElementSibling;
+            // Here you would typically start voice recognition
+            // For now, we'll just show an alert
+            alert(`Voice input activated for ${inputField.placeholder}`);
+        });
+    });
+});
